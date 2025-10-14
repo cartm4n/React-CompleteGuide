@@ -1,0 +1,1 @@
+This repository is replicating my folderstructure for this course and to document my progress
