@@ -40,8 +40,14 @@ function greet(){
   console.log("Hello!");
 }
 
-/// function call
+/// function call including exported function
 greet();
 asdf();
 util.func();
 // asdf.greet(); // this will not work
+
+function greetUser(userName, message){
+  console.log(message + ", " + userName + "!");
+}
+
+greetUser("George", "Welcome back");
