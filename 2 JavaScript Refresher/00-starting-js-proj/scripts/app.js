@@ -42,3 +42,5 @@ function greet(){
 
 /// function call
 greet();
+asdf();
+// asdf.greet(); // this will not work
