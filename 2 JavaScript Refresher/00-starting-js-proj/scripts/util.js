@@ -5,3 +5,7 @@ export let b = "bbbbbbbbbbbbbbbbbbb";
 export default function greet(){
   console.log("Hello from util.js!");
 }
+
+export let func = function(){
+  console.log("func from util.js");
+};
