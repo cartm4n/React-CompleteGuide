@@ -1,3 +1,7 @@
-import { apiKey } from "./util.js";
+import { a,b } from "./util.js";
+import asdf from "./util.js";
 
-console.log(apiKey);
+console.log(asdf);
+console.log("................");
+console.log(a);
+console.log(b);
