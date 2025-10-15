@@ -46,8 +46,10 @@ asdf();
 util.func();
 // asdf.greet(); // this will not work
 
-function greetUser(userName, message){
-  console.log(message + ", " + userName + "!");
+function createGreeting(userName, message = "hello"){
+  //console.log(message + ", " + userName + "!");
+  return message + ", " + userName + "!";
 }
 
-greetUser("George", "Welcome back");
+console.log(createGreeting("George", "Welcome back"));
+console.log(createGreeting("maria"));
