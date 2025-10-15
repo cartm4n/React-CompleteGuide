@@ -32,3 +32,13 @@ console.log("hello" + 5);
 console.log("hello" + true);
 console.log(5 + 5);
 console.log(10 === 5);
+
+// functions
+
+/// function declaration
+function greet(){
+  console.log("Hello!");
+}
+
+/// function call
+greet();
