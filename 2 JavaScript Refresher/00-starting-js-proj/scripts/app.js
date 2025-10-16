@@ -53,3 +53,39 @@ function createGreeting(userName, message = "hello"){
 
 console.log(createGreeting("George", "Welcome back"));
 console.log(createGreeting("maria"));
+
+// Arrow function
+const createGreeting2 = (userName, message = "hello") => {
+  return message + ", " + userName + "!";
+}
+console.log(createGreeting2("George", "Welcome back"));
+
+(word) => console.log(word);
+
+// objects
+const user = {
+  name: "George",
+  age: 30,
+  greet() {
+    console.log("Hello, I am " + this.name);
+  }
+};
+
+console.log(user);
+console.log(user.name);
+user.greet();
+
+/// classes
+class User {
+  constructor(name) {
+    this.name = name;
+  }
+  
+  greet() {
+    console.log("Hello, I am " + this.name);
+  }
+}
+
+const user1 = new User("maria");
+console.log(user1);
+user1.greet();
