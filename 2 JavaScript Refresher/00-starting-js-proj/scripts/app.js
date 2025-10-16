@@ -91,41 +91,51 @@ import asdf from "./util.js";
 // user1.greet();
 
 // // arrays
+// const hobbies =["sports", "cooking", "reading"];
+// console.log(hobbies);
+// console.log(hobbies[0]);
+
+// hobbies.push("coding");
+// console.log(hobbies);
+
+// hobbies.pop();
+// console.log(hobbies);
+
+// let index = hobbies.findIndex((hobby) => hobby === "cooking");
+// console.log(index);
+
+// const test = hobbies.map((item) => item +"!");
+// console.log(test);
+// const transform = hobbies.map((item) => ({ text: item, id: Math.random() }));
+// console.log(transform);
+
+// //hobbies.filter((item) => item !== "sports");
+
+// // // destructuring
+// const userNameData = ["George", "Schwarzmüller"];
+// const [firstName, lastName] = userNameData;
+// console.log(firstName, lastName);
+
+// const user = { age: 30, userName: "george" };
+
+// //const name = user.userName;
+// //const age = user.age;
+// const { userName: name , age } = user;
+// console.log(name, age);
+
+// function storeOrder({id, currency}) { // same as function storeOrder(order) {
+//   console.log('id ' + id);
+//   console.log('currency ' + currency);
+// }
+
+// storeOrder({id: 5, currency: 'USD', amount: 15.99}); // !has more properties than used in function declaration
+
+// // spread & rest
 const hobbies =["sports", "cooking", "reading"];
-console.log(hobbies);
-console.log(hobbies[0]);
+const moreHobbies = ["coding", "dancing"];
 
-hobbies.push("coding");
-console.log(hobbies);
+const allHobbies = [...hobbies, ...moreHobbies]; // ... will pull all items from the array and add them to allHobbies
+console.log(allHobbies);
 
-hobbies.pop();
-console.log(hobbies);
-
-let index = hobbies.findIndex((hobby) => hobby === "cooking");
-console.log(index);
-
-const test = hobbies.map((item) => item +"!");
-console.log(test);
-const transform = hobbies.map((item) => ({ text: item, id: Math.random() }));
-console.log(transform);
-
-//hobbies.filter((item) => item !== "sports");
-
-// // destructuring
-const userNameData = ["George", "Schwarzmüller"];
-const [firstName, lastName] = userNameData;
-console.log(firstName, lastName);
-
-const user = { age: 30, userName: "george" };
-
-//const name = user.userName;
-//const age = user.age;
-const { userName: name , age } = user;
-console.log(name, age);
-
-function storeOrder({id, currency}) { // same as function storeOrder(order) {
-  console.log('id ' + id);
-  console.log('currency ' + currency);
-}
-
-storeOrder({id: 5, currency: 'USD', amount: 15.99}); // !has more properties than used in function declaration
+const mergedHobbies = [hobbies, moreHobbies]; // this will create a nested array
+console.log(mergedHobbies);
