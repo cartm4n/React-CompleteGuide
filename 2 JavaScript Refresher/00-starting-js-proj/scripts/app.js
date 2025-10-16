@@ -111,10 +111,21 @@ console.log(transform);
 
 //hobbies.filter((item) => item !== "sports");
 
-function transformToObjects(numberArray) {
-    // Todo: Add your logic
-    // should return an array of objects
-    
-    return numberArray.map((item) => ({val: item}))
+// // destructuring
+const userNameData = ["George", "Schwarzmüller"];
+const [firstName, lastName] = userNameData;
+console.log(firstName, lastName);
+
+const user = { age: 30, userName: "george" };
+
+//const name = user.userName;
+//const age = user.age;
+const { userName: name , age } = user;
+console.log(name, age);
+
+function storeOrder({id, currency}) { // same as function storeOrder(order) {
+  console.log('id ' + id);
+  console.log('currency ' + currency);
 }
-console.log(transformToObjects([1,2,3]));
+
+storeOrder({id: 5, currency: 'USD', amount: 15.99}); // !has more properties than used in function declaration
