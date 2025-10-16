@@ -131,11 +131,33 @@ import asdf from "./util.js";
 // storeOrder({id: 5, currency: 'USD', amount: 15.99}); // !has more properties than used in function declaration
 
 // // spread & rest
+// const hobbies =["sports", "cooking", "reading"];
+// const moreHobbies = ["coding", "dancing"];
+
+// const allHobbies = [...hobbies, ...moreHobbies]; // ... will pull all items from the array and add them to allHobbies
+// console.log(allHobbies);
+
+// const mergedHobbies = [hobbies, moreHobbies]; // this will create a nested array
+// console.log(mergedHobbies);
+
+// const extendedUser = {
+//   isAdmin: true,
+//   ...user // will pull all properties from user object and add them to extendedUser
+// };
+// console.log(extendedUser);
+
+// control structures
+const password = prompt("Please enter your password");
+
+if (password.length >= 12) {
+  console.log("That is a very strong password");
+} else if (password.length >= 8) {
+  console.log("That password is strong enough");
+} else {
+  console.log("That password is too short");
+}
+
 const hobbies =["sports", "cooking", "reading"];
-const moreHobbies = ["coding", "dancing"];
-
-const allHobbies = [...hobbies, ...moreHobbies]; // ... will pull all items from the array and add them to allHobbies
-console.log(allHobbies);
-
-const mergedHobbies = [hobbies, moreHobbies]; // this will create a nested array
-console.log(mergedHobbies);
+for (const hobby of hobbies) {
+  console.log(hobby);
+}
