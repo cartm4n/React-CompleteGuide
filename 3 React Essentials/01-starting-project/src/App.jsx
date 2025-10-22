@@ -1,11 +1,15 @@
+import { useState } from 'react';
+
 import { CORE_CONCEPTS } from './data.js';
 import Header from './components/Header/Header.jsx';
 import CoreConcept from './components/CoreConcept.jsx';
 import TabButton from './components/TabButton.jsx';
 
 function App() {
-  function handleClickConcept(title) {
-    console.log(`You clicked the ${title} concept`);
+  const [tabContent, setTabContent] = useState("Please click a button");
+
+  function handleClickConcept(tabContent) {
+    setTabContent(tabContent);
   }
 
   return (
@@ -33,7 +37,7 @@ function App() {
             <TabButton onClick={() => {handleClickConcept(`Props`)}}>Props</TabButton>
             <TabButton onClick={() => {handleClickConcept(`State`)}}>State</TabButton>
           </menu>
-          Dynamic Content
+          <p>{tabContent}</p>
         </section>
       </main>
     </div>
