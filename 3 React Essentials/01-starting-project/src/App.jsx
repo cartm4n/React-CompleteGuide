@@ -1,8 +1,13 @@
 import { CORE_CONCEPTS } from './data.js';
 import Header from './components/Header/Header.jsx';
 import CoreConcept from './components/CoreConcept.jsx';
+import TabButton from './components/TabButton.jsx';
 
 function App() {
+  function handleClickConcept(title) {
+    console.log(`You clicked the ${title} concept`);
+  }
+
   return (
     <div>
       <Header />
@@ -20,7 +25,16 @@ function App() {
               image={CORE_CONCEPTS[3].image}/>
           </ul>
         </section>
-        <h2>Time to get started!</h2>
+        <section id="examples">
+          <h2>Examples</h2>
+          <menu>
+            <TabButton onClick={() => {handleClickConcept(`Components`)}}>Components</TabButton>
+            <TabButton onClick={() => {handleClickConcept(`JSX`)}}>JSX</TabButton>
+            <TabButton onClick={() => {handleClickConcept(`Props`)}}>Props</TabButton>
+            <TabButton onClick={() => {handleClickConcept(`State`)}}>State</TabButton>
+          </menu>
+          Dynamic Content
+        </section>
       </main>
     </div>
   );
