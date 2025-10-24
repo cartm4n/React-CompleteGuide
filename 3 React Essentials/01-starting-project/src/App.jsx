@@ -1,12 +1,13 @@
 import { useState } from 'react';
 
 import { CORE_CONCEPTS } from './data.js';
+import { EXAMPLES } from './data.js';
 import Header from './components/Header/Header.jsx';
 import CoreConcept from './components/CoreConcept.jsx';
 import TabButton from './components/TabButton.jsx';
 
 function App() {
-  const [tabContent, setTabContent] = useState("Please click a button");
+  const [tabContent, setTabContent] = useState("Components");
 
   function handleClickConcept(tabContent) {
     setTabContent(tabContent);
@@ -37,7 +38,15 @@ function App() {
             <TabButton onClick={() => {handleClickConcept(`Props`)}}>Props</TabButton>
             <TabButton onClick={() => {handleClickConcept(`State`)}}>State</TabButton>
           </menu>
-          <p>{tabContent}</p>
+          <div id="tab-content">
+            <h3>{EXAMPLES[tabContent.toLowerCase()].title}</h3>
+            <p>{EXAMPLES[tabContent.toLowerCase()].description}</p>
+            <pre>
+              <code>
+                {EXAMPLES[tabContent.toLowerCase()].code}
+              </code>
+            </pre>
+          </div>
         </section>
       </main>
     </div>
