@@ -7,7 +7,7 @@ import CoreConcept from './components/CoreConcept.jsx';
 import TabButton from './components/TabButton.jsx';
 
 function App() {
-  const [tabContent, setTabContent] = useState("Components");
+  const [tabContent, setTabContent] = useState();
 
   function handleClickConcept(tabContent) {
     setTabContent(tabContent);
@@ -38,15 +38,17 @@ function App() {
             <TabButton onClick={() => {handleClickConcept(`Props`)}}>Props</TabButton>
             <TabButton onClick={() => {handleClickConcept(`State`)}}>State</TabButton>
           </menu>
-          <div id="tab-content">
-            <h3>{EXAMPLES[tabContent.toLowerCase()].title}</h3>
-            <p>{EXAMPLES[tabContent.toLowerCase()].description}</p>
-            <pre>
-              <code>
-                {EXAMPLES[tabContent.toLowerCase()].code}
-              </code>
-            </pre>
-          </div>
+          {!tabContent ? <p>Please select a topic.</p> : 
+            <div id="tab-content">
+              <h3>{EXAMPLES[tabContent.toLowerCase()].title}</h3>
+              <p>{EXAMPLES[tabContent.toLowerCase()].description}</p>
+              <pre>
+                <code>
+                  {EXAMPLES[tabContent.toLowerCase()].code}
+                </code>
+              </pre>
+            </div>}
+
         </section>
       </main>
     </div>
