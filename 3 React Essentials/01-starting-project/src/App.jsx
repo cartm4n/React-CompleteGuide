@@ -20,23 +20,20 @@ function App() {
         <section id ="core-concepts">
           <h2>Core Concepts</h2>
           <ul>
-            <CoreConcept {...CORE_CONCEPTS[0]}/>
-            <CoreConcept {...CORE_CONCEPTS[1]}/>
-            <CoreConcept {...CORE_CONCEPTS[2]}/>
-            {/* Alternatively the long version: */}
-            <CoreConcept 
-              title={CORE_CONCEPTS[3].title} 
-              description={CORE_CONCEPTS[3].description}
-              image={CORE_CONCEPTS[3].image}/>
+            {
+            CORE_CONCEPTS.map((concept) => (
+              <CoreConcept {...concept}/>))
+            }
           </ul>
         </section>
         <section id="examples">
           <h2>Examples</h2>
+          
           <menu>
-            <TabButton onClick={() => {handleClickConcept(`Components`)}}>Components</TabButton>
-            <TabButton onClick={() => {handleClickConcept(`JSX`)}}>JSX</TabButton>
-            <TabButton onClick={() => {handleClickConcept(`Props`)}}>Props</TabButton>
-            <TabButton onClick={() => {handleClickConcept(`State`)}}>State</TabButton>
+            <TabButton isSelected={tabContent === "Components"} onClick={() => {handleClickConcept("Components")}}>Components</TabButton>
+            <TabButton isSelected={tabContent === "JSX"} onClick={() => {handleClickConcept("JSX")}}>JSX</TabButton>
+            <TabButton isSelected={tabContent === "Props"} onClick={() => {handleClickConcept("Props")}}>Props</TabButton>
+            <TabButton isSelected={tabContent === "State"} onClick={() => {handleClickConcept("State")}}>State</TabButton>
           </menu>
           {!tabContent ? <p>Please select a topic.</p> : 
             <div id="tab-content">
