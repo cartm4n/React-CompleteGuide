@@ -29,7 +29,7 @@ export default function Examples() {
   return (
     <Section title="Examples" id="examples">
       <Tabs
-        buttonsContainer="menu" // custom components need to be passed like: {Section}
+        ButtonsContainer="menu" // capital letter important, because it is getting a component
         buttons={
           <>
             <TabButton
