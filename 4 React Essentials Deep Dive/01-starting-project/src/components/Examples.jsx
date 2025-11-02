@@ -29,6 +29,7 @@ export default function Examples() {
   return (
     <Section title="Examples" id="examples">
       <Tabs
+        buttonsContainer="menu" // custom components need to be passed like: {Section}
         buttons={
           <>
             <TabButton
