@@ -6,8 +6,7 @@ import GameBoard from "./components/GameBoard";
 function App() {
   const [activePlayer, setActivePlayer] = useState("X");
 
-  function handleSelectSquare(rowIndex, colIndex) {
-    console.log("Selected square at:", rowIndex, colIndex);
+  function handleSelectSquare() {
     setActivePlayer((prevPlayer) => (prevPlayer === "X" ? "O" : "X"));
   }
 
@@ -15,10 +14,10 @@ function App() {
     <main>
       <div id="game-container">
         <ol id="players" className="highlight-players">
-          <Player initialName="Player 1" symbol="X" />
-          <Player initialName="Player 2" symbol="O" />
+          <Player initialName="Player 1" symbol="X" isActive={activePlayer === "X"} />
+          <Player initialName="Player 2" symbol="O" isActive={activePlayer === "O"}/>
         </ol>
-        <GameBoard onSelectSquare={handleSelectSquare} />
+        <GameBoard onSelectSquare={handleSelectSquare} activePlayerSymbol={activePlayer} />
       </div>
     </main>
   );
